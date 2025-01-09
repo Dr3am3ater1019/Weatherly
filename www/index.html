@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weatherly - Weather Forecast</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styles.css') }}">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbLoR-tX16Q-d41pcyZY4FzBoM-2j9H0E&libraries=places"></script>
+    <script src="{{ url_for('static', filename='JS/script.js') }}" defer></script>
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/Images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/Images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/Images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/Images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/Images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/Images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/Images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/Images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/Images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/Images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/Images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/Images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/Images/favicon-16x16.png">
+    <link rel="manifest" href="/static/Images/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/Images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <img src="{{ url_for('static', filename='Images/Weatherly.png') }}" alt="Weatherly Logo" class="logo">
+            Weatherly
+        </h1>
+
+        <form id="weather-form">
+            <label for="location">Location:</label>
+            <input type="text" id="location" placeholder="Enter location" required><br><br>
+            <button type="submit">Get Weather</button>
+        </form>
+
+        <div id="weather-result"></div>
+    </div>
+</body>
+</html>

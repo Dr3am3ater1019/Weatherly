@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weatherly - Loading</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/landing.css') }}">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Force animation reset by reloading the page on refresh
+            document.body.style.animation = "none";
+            setTimeout(() => {
+                document.body.style.animation = "";
+            }, 0);
+
+            // Redirect to the index page after 3 seconds
+            setTimeout(function() {
+                window.location.href = "/index";
+            }, 2000);
+        });
+    </script>
+</head>
+<body>
+    <!-- Animation Section -->
+    <css-doodle>
+        <style>
+            @grid: 20 / 20vmin;
+
+            background: #58a6ff;
+            scale: 0;
+            opacity: 0;
+            animation: scaleFade 3s linear infinite;
+
+            animation-delay: calc(-1s / @I * @i * @sin(@i));
+
+            @keyframes scaleFade {
+                0%, 50%, 90% { scale: 1; opacity: 1; }
+                25%, 75%, 100% { scale: 0; opacity: 0; }
+            }
+        </style>
+    </css-doodle>
+
+    <!-- Include CSS Doodle Script -->
+    <script src="https://unpkg.com/css-doodle@0.29.1/css-doodle.min.js"></script>
+</body>
+</html>
